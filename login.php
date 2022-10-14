@@ -9,8 +9,8 @@ $dbname = "test";
 
 
 
-$myusername = $_POST["username"];
-$mypassword= $_POST["password"];
+$id = $_POST["id"];
+$email= $_POST["email"];
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,7 +24,7 @@ if (!$conn) {
 
 
 
-$sql = "SELECT * FROM MyGuests WHERE usrname = '$myusername' and password = '$mypassword'";
+$sql = "SELECT * FROM Account WHERE id = '$id' and password = '$email'";
 
 $result = $conn->query($sql);
 
@@ -37,7 +37,7 @@ if ($result->num_rows === 1) {
 	if (!isset($_SESSION['row'])) {  
 	
     $_SESSION['row'] = $row;        
-    header("location: welcome.php");
+    header("location: account.php");
 	}
 
 	
