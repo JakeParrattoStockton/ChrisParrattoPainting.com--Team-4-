@@ -40,29 +40,30 @@
                         <li><a href="about.html"  class="nav-link px-2 link-secondary">ABOUT</a></li>
                         <li><a href="reviews.html" class="nav-link px-2 link-dark">REVIEWS</a></li>
                         <li><a href="request.html" class="nav-link px-2 link-dark">REQUEST</a></li>
-                        <li><a href="account.html" class="nav-link px-2 link-dark">ACCOUNT</a></li>
+                        <li><a href="account.php" class="nav-link px-2 link-dark">ACCOUNT</a></li>
                     </ul>
                 </div>
             </nav>
              <!-- Header -->
-
-        <p class="auto-style1">&nbsp;<strong>Log In&nbsp;</strong></p>
-        <form action="login.php" method="post">
-	    ID:<br />
-	    <br />
-        &nbsp;<input name="id" style="width: 171px; height: 35px" type="text" /><br />
-	    <br />
-	    Email:<br />
-	    <br />
-	    <input name="email" style="width: 177px; height: 30px" type="text" /><br />
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    <br />
-	    <br />
-	    <input name="LOGIN" type="submit" value="LOGIN" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    <input name="reset" style="width: 69px" type="reset" value="RESET" /></form>
-        <p class="auto-style2">Please sign up <a href="signup.html">here </a>if this is your first visit.<br />
-        </p>
-
+            
+        <div class="container d-flex flex-wrap justify-content-center">     
+            <p class="auto-style1">&nbsp;<strong>Log In&nbsp;</strong></p>
+            <form action="login.php" method="post">
+                Email:<br />
+                <br />
+                &nbsp;<input name="email" style="width: 171px; height: 35px" type="email" /><br />
+                <br />
+                Password:<br />
+                <br />
+                <input name="password" style="width: 177px; height: 30px" type="password" /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
+                <br />
+                <input name="LOGIN" type="submit" value="LOGIN" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="reset" style="width: 69px" type="reset" value="RESET" /></form>
+                <p class="auto-style2">Please sign up <a href="signup.html">here </a>if this is your first visit.<br />
+            </p>
+        </div>
 
 
     </body>

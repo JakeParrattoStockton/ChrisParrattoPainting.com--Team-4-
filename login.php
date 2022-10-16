@@ -5,11 +5,11 @@
 $servername = "127.0.0.1";
 $username = "root";
 $password = "root";
-$dbname = "test";
+$dbname = "chrisppaint";
 
 
 
-$id = $_POST["id"];
+$pword = $_POST["password"];
 $email= $_POST["email"];
 
 
@@ -21,10 +21,7 @@ if (!$conn) {
 }
 
 
-
-
-
-$sql = "SELECT * FROM Account WHERE id = '$id' and password = '$email'";
+$sql = "SELECT * FROM Account WHERE password = '$pword' and email = '$email'";
 
 $result = $conn->query($sql);
 

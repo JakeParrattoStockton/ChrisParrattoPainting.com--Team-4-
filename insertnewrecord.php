@@ -5,7 +5,7 @@
 $servername = "127.0.0.1";
 $username = "root";
 $password = "root";
-$dbname = "test";
+$dbname = "chrisppaint";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,14 +14,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$id = $_POST["id"];
+$email = $_POST["Email"];
+$pword = $_POST["password"];
 $fname = $_POST["firstname"];
 $lname = $_POST["lastname"];
-$email = $_POST["Email"];
 $phonenumber = $_POST["phonenumber"];
 $admin = $_POST["admin"]
 
-$sql = "INSERT INTO Account (id, firstname, lastname, Email, phonenumber, admin) VALUES ('$id','$fname', '$lname', '$email', '$phonenumber', '$admin')";
+$sql = "INSERT INTO Account (password, first_name, last_name, email, phone_number, admin) VALUES ( '$pword','$fname', '$lname', '$email', '$phonenumber', '$admin')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Sign up successfully!";

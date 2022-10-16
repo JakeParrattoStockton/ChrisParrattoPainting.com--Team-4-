@@ -40,13 +40,50 @@
                         <li><a href="about.html"  class="nav-link px-2 link-secondary">ABOUT</a></li>
                         <li><a href="reviews.html" class="nav-link px-2 link-dark">REVIEWS</a></li>
                         <li><a href="request.html" class="nav-link px-2 link-dark">REQUEST</a></li>
-                        <li><a href="account.html" class="nav-link px-2 link-dark">ACCOUNT</a></li>
+                        <li><a href="account.php" class="nav-link px-2 link-dark">ACCOUNT</a></li>
                     </ul>
                 </div>
             </nav>
              <!-- Header -->
 
-        account
+             <?php
+
+            session_start();
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
+            $ret = $_SESSION['row']
+            ?>
+
+            <table class="auto-style2" style="width: 56%">
+                <tr>
+                    <td style="width: 243; height: 23px" class="auto-style1">First name</td>
+                    <td style="width: 229px; height: 23px;">Last Name</td>
+                    <td style="height: 23px">Email:</td>
+                    <td style="height: 23px">Phone:</td>
+                </tr>
+                <tr>
+
+                    <td style="width: 243; height: 2" class="auto-style3"><?php echo $ret['first_name']; ?></td>
+                    <td style="width: 229px" class="auto-style3"><?php echo $ret['last_name']; ?></td>
+                    <td class="auto-style3"><?php echo $ret['email']; ?></td>
+                    <td class="auto-style3"><?php echo $ret['phone_number']; ?></td>
+                </tr>
+            </table> 
+            <br>
+            <table class="auto-style2" style="width: 56%">
+                <tr>
+                    <td style="width: 243; height: 23px" class="auto-style1">Jobs</td>
+                </tr>
+                <tr>
+                    <td>Job 1</td>
+                </tr>
+            </table> 
+
+
+            
+        
     </body>
 
 </html>
