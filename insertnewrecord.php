@@ -19,13 +19,13 @@ $pword = $_POST["password"];
 $fname = $_POST["firstname"];
 $lname = $_POST["lastname"];
 $phonenumber = $_POST["phonenumber"];
-$admin = $_POST["admin"]
+$admin = $_POST["admin"];
 
-$sql = "INSERT INTO Account (password, first_name, last_name, email, phone_number, admin) VALUES ( '$pword','$fname', '$lname', '$email', '$phonenumber', '$admin')";
+$sql = "INSERT INTO account (email, password, first_name, last_name, phone_number, admin) VALUES ('$email', '$pword', '$fname', '$lname', '$phonenumber', '$admin')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Sign up successfully!";
-    header("location: account.html");
+    header("location: login.html");
 } 
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
