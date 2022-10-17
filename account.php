@@ -53,19 +53,36 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             } 
-            $ret = $_SESSION['row']
+            $ret = $_SESSION['row'];
+            
+            $servername = "127.0.0.1";
+            $username = "root";
+            $password = "root";
+            $dbname = "chrisppaint";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
+            $id = $ret['account_id'];
+
+            $sql = "SELECT job_id, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id";
+
+            $jobresults = $conn->query($sql);
             ?>
 
             <table class="auto-style2" style="width: 56%">
                 <tr>
-                    <td style="width: 243; height: 23px" class="auto-style1">First name</td>
+                    <td style="width: 243px; height: 23px" class="auto-style1">First name</td>
                     <td style="width: 229px; height: 23px;">Last Name</td>
-                    <td style="height: 23px">Email:</td>
-                    <td style="height: 23px">Phone:</td>
+                    <td style="height: 23px">Email</td>
+                    <td style="height: 23px">Phone</td>
                 </tr>
                 <tr>
 
-                    <td style="width: 243; height: 2" class="auto-style3"><?php echo $ret['first_name']; ?></td>
+                    <td style="width: 243px; height: 2" class="auto-style3"><?php echo $ret['first_name']; ?></td>
                     <td style="width: 229px" class="auto-style3"><?php echo $ret['last_name']; ?></td>
                     <td class="auto-style3"><?php echo $ret['email']; ?></td>
                     <td class="auto-style3"><?php echo $ret['phone_number']; ?></td>
@@ -74,10 +91,26 @@
             <br>
             <table class="auto-style2" style="width: 56%">
                 <tr>
-                    <td style="width: 243; height: 23px" class="auto-style1">Jobs</td>
+                    <td style="width: 243; height: 23px" class="auto-style1">Job</td>
+                    <td style="width: 229px; height: 23px;">Address</td>
+                    <td style="width: 229px; height: 23px;">Date</td>
+                    <td style="height: 23px">Cost</td>
+                    <td style="width: 255px; height: 23px">Description</td>
                 </tr>
+
+
                 <tr>
-                    <td>Job 1</td>
+                    <?php
+                        while($row = $jobresults->fetch_assoc()) {
+                            echo '<td style="width: 243; height: 23px" class="auto-style1">' . $row['job_id'] . '</td>';
+                            echo '<td style="width: 229px" class="auto-style3">' . $row['Address'] . '</td>';
+                            echo '<td class="auto-style3">' . $row['StartDate'] . '</td>';
+                            echo '<td class="auto-style3">' . $row['Cost'] . '</td>';
+                            echo '<td class="auto-style3">' . $row['Description'] . '</td>';
+                        }
+
+                        $jobresults->close();
+                    ?>
                 </tr>
             </table> 
 
