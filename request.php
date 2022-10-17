@@ -3,6 +3,10 @@
 
 <?php
 
+session_start();
+
+$ret = $_SESSION['row'];
+
 $servername = "127.0.0.1";
 $username = "root";
 $password = "root";
@@ -15,16 +19,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+$id = $ret['account_id'];
 $date = $_POST["date"];
 $address = $_POST["address"];
 $description = $_POST["job-d"];
 $cost = $_POST["cost"];
 
-$sql = "INSERT INTO job (StartDate, Address, Descripion, Cost) VALUES ('$date', '$address', '$description', '$cost')";
+$sql = "INSERT INTO job (account_id, StartDate, Address, Description, Cost) VALUES ('$id', '$date', '$address', '$description', '$cost')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Sign up successfully!";
-    header("location: login.html");
+    header("location: account.php");
 } 
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;

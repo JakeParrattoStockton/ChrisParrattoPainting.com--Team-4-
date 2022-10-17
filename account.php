@@ -73,6 +73,9 @@
             $jobresults = $conn->query($sql);
             ?>
 
+            <h2>ACCOUNT INFO</h2>
+            <br>
+
             <table class="auto-style2" style="width: 56%">
                 <tr>
                     <td style="width: 243px; height: 23px" class="auto-style1">First name</td>
@@ -89,6 +92,9 @@
                 </tr>
             </table> 
             <br>
+            <br>
+            <h2>JOBS</h2>
+            <br>
             <table class="auto-style2" style="width: 56%">
                 <tr>
                     <td style="width: 243; height: 23px" class="auto-style1">Job</td>
@@ -98,20 +104,22 @@
                     <td style="width: 255px; height: 23px">Description</td>
                 </tr>
 
-
-                <tr>
                     <?php
                         while($row = $jobresults->fetch_assoc()) {
+                            echo '<tr>';
+
                             echo '<td style="width: 243; height: 23px" class="auto-style1">' . $row['job_id'] . '</td>';
                             echo '<td style="width: 229px" class="auto-style3">' . $row['Address'] . '</td>';
                             echo '<td class="auto-style3">' . $row['StartDate'] . '</td>';
                             echo '<td class="auto-style3">' . $row['Cost'] . '</td>';
                             echo '<td class="auto-style3">' . $row['Description'] . '</td>';
+
+                            echo '</tr>';
                         }
 
                         $jobresults->close();
                     ?>
-                </tr>
+               
             </table> 
 
 
