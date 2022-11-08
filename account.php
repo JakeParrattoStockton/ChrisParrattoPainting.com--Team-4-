@@ -93,6 +93,25 @@
             </table> 
             <br>
             <br>
+            <h2>MODIFY ACCOUNT</h2>
+            <form action="modify.php" method="post">
+                <br>
+                    <tr>
+                        <td style="width: 243px; height: 23px" class="auto-style1">Current Email</td>
+                        <br />&nbsp;<input name="email" style="width: 171px; height: 35px" type="email" /><br />
+                        <td style="width: 243px; height: 23px" class="auto-style1">Current Password</td>
+                        <br />&nbsp;<input name="password" style="width: 171px; height: 35px" type="password" /><br />
+                        <td style="width: 243px; height: 23px" class="auto-style1">New Email</td>
+                        <br />&nbsp;<input name="newEmail" style="width: 171px; height: 35px" type="newEmail" /><br />
+                        <td style="width: 229px; height: 23px;">New Phone Number</td>
+                        <br />&nbsp;<input name="newPhone" style="width: 171px; height: 35px" type="newPhone" /><br />
+                        <td style="width: 229px; height: 23px;">New Password</td>
+                        <br />&nbsp;<input name="newPass" style="width: 171px; height: 35px" type="newPass" /><br />
+                        <br />
+                        <input name="Modify" type="submit" value="Modify" />
+                    </tr>
+            <br>
+            <br>
             <h2>JOBS</h2>
             <br>
             <table class="auto-style2" style="width: 56%">
