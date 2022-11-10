@@ -9,7 +9,7 @@ $ret = $_SESSION['row'];
 
 $servername = "127.0.0.1";
 $username = "root";
-$password = "root";
+$password = "mysql";
 $dbname = "chrisppaint";
 
 // Create connection
@@ -25,7 +25,7 @@ $address = $_POST["address"];
 $description = $_POST["job-d"];
 $cost = $_POST["cost"];
 
-$sql = "INSERT INTO job (account_id, StartDate, Address, Description, Cost) VALUES ('$id', '$date', '$address', '$description', '$cost')";
+$sql = "INSERT INTO job (account_id, status, StartDate, Address, Description, Cost) VALUES ('$id', '1', '$date', '$address', '$description', '$cost')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Sign up successfully!";

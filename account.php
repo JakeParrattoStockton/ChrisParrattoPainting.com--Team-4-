@@ -44,28 +44,28 @@
                     </ul>
                 </div>
             </nav>
-             <!-- Header -->
 
              <?php
 
             session_start();
-            // Check connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            } 
-            $ret = $_SESSION['row'];
-            
+
             $servername = "127.0.0.1";
             $username = "root";
-            $password = "root";
+            $password = "mysql";
             $dbname = "chrisppaint";
-
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             } 
+
+            $ret = $_SESSION['row'];
+
+            if(empty($ret['account_id'])) {
+                header('Location: login.html');
+            }
+
             $id = $ret['account_id'];
 
             $sql = "SELECT job_id, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id";
@@ -121,17 +121,35 @@
                     <td style="width: 229px; height: 23px;">Date</td>
                     <td style="height: 23px">Cost</td>
                     <td style="width: 255px; height: 23px">Description</td>
+                    <td style="width: 255px; height: 23px">Status</td>
                 </tr>
 
                     <?php
                         while($row = $jobresults->fetch_assoc()) {
                             echo '<tr>';
+                            
+                            $current_status = 'Pending';
+
+                            switch($current_status) {
+                                case 2:
+                                    $current_status = 'Started';
+                                    break;
+                                
+                                case 3:
+                                    $current_status = 'Awaiting Payment';
+                                    break;
+
+                                case 4:
+                                    $current_status = 'Completed';
+                                    break;
+                            }
 
                             echo '<td style="width: 243; height: 23px" class="auto-style1">' . $row['job_id'] . '</td>';
                             echo '<td style="width: 229px" class="auto-style3">' . $row['Address'] . '</td>';
                             echo '<td class="auto-style3">' . $row['StartDate'] . '</td>';
                             echo '<td class="auto-style3">' . $row['Cost'] . '</td>';
                             echo '<td class="auto-style3">' . $row['Description'] . '</td>';
+                            echo '<td class="auto-style3">' . $current_status . '</td>';
 
                             echo '</tr>';
                         }
