@@ -40,28 +40,31 @@
                         <li><a href="about.html"  class="nav-link px-2 link-secondary">ABOUT</a></li>
                         <li><a href="reviews.html" class="nav-link px-2 link-dark">REVIEWS</a></li>
                         <li><a href="request.html" class="nav-link px-2 link-dark">REQUEST</a></li>
-                        <li><a href="account.html" class="nav-link px-2 link-dark">ACCOUNT</a></li>
+                        <li><a href="account.php" class="nav-link px-2 link-dark">ACCOUNT</a></li>
                     </ul>
                 </div>
             </nav>
              <!-- Header -->
 
 
-        sign up
-        <form action="insertnewrecord.php" method="post">
-            ID:<br>
-            <input name="id" type="text"><br>
-            First name: <br>
-            <input type="text" name="firstname"><br>
-            Last name:<br>
-            <input type="text" name="lastname"><br>
-            Email:<br>
-            <input type="text" name="Email"><br>
-            Phone Number:<br>
-            <input type="text" name="phonenumber"><br>
-            admin?<br>
-            <input type="checkbox" name="admin"><br>
-          <input type="submit" value="Sign Up">
+        <!--sign up -->
+        <div class="container d-flex flex-wrap justify-content-center">
+            <form action="insertnewrecord.php" method="post">
+                Email:<br>
+                <input type ="text" name="Email"><br>
+                Password:<br>
+                <input type="password" name="password"><br>
+                First name: <br>
+                <input type="text" name="firstname"><br>
+                Last name:<br>
+                <input type="text" name="lastname"><br>
+                Phone Number:<br>
+                <input type="text" name="phonenumber"><br>
+                admin?<br>
+                <input type="checkbox" name="admin" value="1"><br>
+            <input type="submit" value="Sign Up">
+            </form>
+        </div>
     </body>
 
 </html>
