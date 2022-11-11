@@ -1,5 +1,4 @@
-<!-- page that takes the job that user clicked on and gathers it's information onto one page to view and manage -->
-
+<!-- page for user to manage their job -->
 <!doctype html>
 <html>
     
@@ -47,7 +46,7 @@
              <!-- Header -->
 
 
-        single job
+        jobs
     </body>
 
 </html>
