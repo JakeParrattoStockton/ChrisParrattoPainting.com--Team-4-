@@ -47,7 +47,7 @@
              <!-- Header -->
 
         <div class="container d-flex flex-wrap justify-content-center">
-            <form action="request.php" method="post">
+            <form action="request.php" method="post" enctype="multipart/form-data">
 
                 Start Date: <br>
                 <input type="date" name="start-date" value="2022-10-14"min="2022-10-14" max="2025-10-14"> <br>
@@ -57,7 +57,9 @@
                 <input type="text" name="address"> <br>
                 Estimated Cost: <br>
                 <input type="number" name ="cost"> <br>
-                 <br>
+                Photos: <br>
+                <input type = "file" name ="image" accept=" .jpg, .jpeg, .png"> <br>
+                <br>
                 <input type="submit" name="submit" value="Submit Request">
                 
             </form>

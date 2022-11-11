@@ -68,7 +68,7 @@
 
             $id = $ret['account_id'];
 
-            $sql = "SELECT job_id, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id";
+            $sql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id ORDER BY job_id DESC";
 
             $jobresults = $conn->query($sql);
             ?>
@@ -125,12 +125,17 @@
                 </tr>
 
                     <?php
-                        while($row = $jobresults->fetch_assoc()) {
+                        $i = 0;
+
+                        while($row = $jobresults->fetch_assoc() and $i < 5) {
                             echo '<tr>';
                             
-                            $current_status = 'Pending';
+                            $current_status = $row['status'];
 
                             switch($current_status) {
+                                case 1:
+                                    $current_status = 'Pending';
+                                    break;
                                 case 2:
                                     $current_status = 'Started';
                                     break;
@@ -152,6 +157,8 @@
                             echo '<td class="auto-style3">' . $current_status . '</td>';
 
                             echo '</tr>';
+
+                            $i++; 
                         }
 
                         $jobresults->close();
