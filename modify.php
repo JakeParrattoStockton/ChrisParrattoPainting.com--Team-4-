@@ -2,6 +2,9 @@
 <body>
 
 <?php
+
+session_start();
+
 $servername = "127.0.0.1";
 $username = "root";
 $password = "mysql";
@@ -13,13 +16,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$email = $_POST["email"]
-$password = $_POST["password"]
+$email = $_POST["email"];
+$password = $_POST["password"];
 $newEmail = $_POST["newEmail"];
 $newPhone = $_POST["newPhone"];
-$newPass = $_POST["newPass"]
+$newPass = $_POST["newPass"];
 
-$sql = "UPDATE account set Email='$newEmail',phone_numer='$newPhone',password='$newPass' where email='$email' and password= '$password'";
+$sql = "UPDATE account SET email = '$newEmail', phone_number = '$newPhone', password = '$newPass' WHERE email = '$email' AND password = '$password'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Modify complete!";

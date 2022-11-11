@@ -110,6 +110,7 @@
                         <br />
                         <input name="Modify" type="submit" value="Modify" />
                     </tr>
+                    <a href = 'logout.php'><button type ="button" name = "Logout">Logout</button></a>
             <br>
             <br>
             <h2>JOBS</h2>
@@ -165,6 +166,7 @@
                     ?>
                
             </table> 
+            <a href="jobs.php">View All<a>
 
 
             

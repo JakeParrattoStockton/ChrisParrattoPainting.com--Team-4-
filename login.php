@@ -39,7 +39,9 @@ if ($result->num_rows === 1) {
 
 	
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+
+    echo "Error: Account not found" . $sql . "<br>" . $conn->error;
+    header("location: signup.html");
 }
 
 
