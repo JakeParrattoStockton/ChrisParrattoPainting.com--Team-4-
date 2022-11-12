@@ -62,6 +62,7 @@ if($imgsize > 0) {
         }
 }
 else {
+    
     header("location: account.php");
 }    
 
