@@ -21,7 +21,13 @@ $lname = $_POST["lastname"];
 $phonenumber = $_POST["phonenumber"];
 $admin = $_POST["admin"];
 
-$sql = "INSERT INTO account (email, password, first_name, last_name, phone_number, admin) VALUES ('$email', '$pword', '$fname', '$lname', '$phonenumber', '$admin')";
+if(empty($admin)) {
+    $sql = "INSERT INTO account (email, password, first_name, last_name, phone_number, admin) VALUES ('$email', '$pword', '$fname', '$lname', '$phonenumber', '0')";
+}
+else {
+    $sql = "INSERT INTO account (email, password, first_name, last_name, phone_number, admin) VALUES ('$email', '$pword', '$fname', '$lname', '$phonenumber', '$admin')";
+}
+
 
 if ($conn->query($sql) === TRUE) {
     echo "Sign up successfully!";
