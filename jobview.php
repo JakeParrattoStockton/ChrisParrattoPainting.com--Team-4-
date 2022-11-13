@@ -47,7 +47,7 @@
                 <div class = "container d-flex flex-wrap justify-content-center" style="font-family: Cambria; font-size: larger;">
                     <ul class="nav">
                         <li><a href="about.html"  class="nav-link px-2 link-secondary">ABOUT</a></li>
-                        <li><a href="reviews.html" class="nav-link px-2 link-dark">REVIEWS</a></li>
+                        <li><a href="reviews.php" class="nav-link px-2 link-dark">REVIEWS</a></li>
                         <li><a href="request.html" class="nav-link px-2 link-dark">REQUEST</a></li>
                         <li><a href="account.php" class="nav-link px-2 link-dark">ACCOUNT</a></li>
                     </ul>
@@ -76,9 +76,9 @@
                 header('Location: login.html');
             }
 
-            $address = $_POST['address'];
+            $selectedjob = $_POST['address'];
 
-            $sqljob = "SELECT * FROM job AS job1 WHERE job1.address = '$address'";
+            $sqljob = "SELECT * FROM job AS job1 WHERE job1.job_id = '$selectedjob'";
 
             $jobresult = $conn->query($sqljob);
 
@@ -120,6 +120,7 @@
             if($ret['admin'] == 1) {
             //admin view page
                 if($row['status'] == 4){
+                    //completed job page
                     echo '<form action = "updatejob.php" method = "post">';
                     echo '<table>';
 
@@ -164,16 +165,22 @@
 
                         while($row3 = $accountresults->fetch_assoc()) {
 
+                            echo 'Client First Name: <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
+                            echo 'Client Last Name: <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
+                            echo 'Client Email: <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
+                            echo 'Client Phone Number: <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
+                            echo 'Job Start Date: <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
+                            echo 'Job Location: <br>';
                             echo $jobaddress;
                         }
                         
@@ -185,36 +192,46 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                            echo $jobcost;
+                            echo 'Total Cost: $' . $jobcost . '';
                         
                         echo        '</td>';
-                        echo    '<td>';
+                       
                         
                         $sqlreview =  "SELECT * FROM review AS review1 WHERE review1.job_id = $currentjobid";
 
-                        $reviewresults = $conn->query($sqlaccount);
+                        $reviewresults = $conn->query($sqlreview);
+
+                        $counter = 0;
 
                         while($row4 = $reviewresults->fetch_assoc()){
-
-                            if($row4['rating'] < 1) {
-                                echo 'Rating : Not Yet Rated';
-                            }
-                            else{
-                                echo 'Rating : ' . $row4['rating'] . '';
-                                echo '</td>';
-
-                                echo '</tr>';
-
-                                echo '<tr>';
-                                echo '<td>';
-
-                                echo 'Text Review : <br>' . $row4['Review_text'] . '';
-
-                            }
                             
+                            echo  '<td>';
+                            echo 'Rating : ' . $row4['Rating'] . ' Stars';
+                            echo '</td>';
+
+                            echo '</tr>';
+
+                            echo '<tr>';
+                            echo '<td>';
+
+                            echo 'Text Review : <br>' . $row4['Review_text'] . '';
+                            echo '</td>';
+                            $counter++;
+                        }
+
+                        if($counter == 0) {
+                            echo  '<td>';
+                            echo 'Rating : Not Yet Rated';
+                            echo '</td>';
+
+                            echo '<tr>';
+                            echo '<td>';
+
+                            echo 'Text Review : <br> Not Yet Reviewed';
+                            echo '</td>';
                         }
                         
-                        echo '</td>';
+                        
 
                         echo '</tr>';
 
@@ -230,10 +247,11 @@
 
                     echo '</table>';
 
-                    echo '<button type = "submit" name = "updateJob" value = "updateJob">Update</button>';
+                    echo '<button type = "submit" name = "updateJob" value = "'. $currentjobid .'">Update</button>';
                     echo '</form>';
                 }
                 else{
+                    //incompleted job page
                     echo '<form action = "updatejob.php" method = "post">';
                     echo '<table>';
 
@@ -278,16 +296,22 @@
 
                         while($row3 = $accountresults->fetch_assoc()) {
 
+                            echo 'Client First Name: <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
+                            echo 'Client Last Name: <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
+                            echo 'Client Email: <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
+                            echo 'Client Phone Number: <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
+                            echo 'Job Start Date: <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
+                            echo 'Job Location: <br>';
                             echo $jobaddress;
                         }
                         
@@ -299,7 +323,7 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                            echo $jobcost;
+                        echo 'Total Cost: $' . $jobcost . '';
                         
                         echo        '</td>';
 
@@ -317,13 +341,14 @@
 
                     echo '</table>';
 
-                    echo '<button type = "submit" name = "updateJob" value = "updateJob">Update</button>';
+                    echo '<button type = "submit" name = "updateJob" value = "'. $currentjobid .'">Update</button>';
                     echo '</form>';
                 }
             }
             else{
             //user view page
                 if($row['status'] == 4){
+                    //completed job
                     echo '<form action = "updatejob.php" method = "post">';
                     echo '<table>';
 
@@ -363,16 +388,22 @@
 
                         while($row3 = $accountresults->fetch_assoc()) {
 
+                            echo 'Client First Name: <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
+                            echo 'Client Last Name: <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
+                            echo 'Client Email: <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
+                            echo 'Client Phone Number: <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
+                            echo 'Job Start Date: <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
+                            echo 'Job Location: <br>';
                             echo $jobaddress;
                         }
                         
@@ -384,18 +415,35 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                            echo $jobcost;
+                        echo 'Total Cost: $' . $jobcost . '';
                         
                         echo        '</td>';
-                        echo    '<td>';
+                        
                         
                         $sqlreview =  "SELECT * FROM review AS review1 WHERE review1.job_id = $currentjobid";
 
-                        $reviewresults = $conn->query($sqlaccount);
+                        $reviewresults = $conn->query($sqlreview);
+
+                        $counter2 = 0;
 
                         while($row4 = $reviewresults->fetch_assoc()){
+                            echo    '<td>';
+                            echo 'Rating : ' . $row4['Rating'] . ' Stars';
+                            echo '</td>';
 
-                            if($row4['rating'] < 1) {
+                            echo '</tr>';
+
+                            echo '<tr>';
+                            echo '<td>';
+
+                            echo 'Text Review : <br> <input type = "text" id ="review" name = "review" value = "' . $row4['Review_text'] . '" ></input>';
+                            echo '</td>';
+                            $counter2++;
+                            
+                        }
+
+                        if($counter2 == 0) {
+
                                 echo    '<td> <select  name = "cRating">';
                                 echo                '<option value = "0">Rate Job</option>';
                                 echo                 '<option value = "1">1 Star</option>';
@@ -404,9 +452,6 @@
                                 echo                 '<option value = "4">4 Star</option>';
                                 echo                 '<option value = "5">5 Star</option>';
                                 echo            '</select></td>';
-                            }
-                            else{
-                                echo 'Rating : ' . $row4['rating'] . '';
                                 echo '</td>';
 
                                 echo '</tr>';
@@ -414,13 +459,11 @@
                                 echo '<tr>';
                                 echo '<td>';
 
-                                echo 'Text Review : <br> <input type = "text" id ="review" name = "review" value = "' . $row4['Review_text'] . '" ></input>';
-
-                            }
-                            
+                                echo 'Text Review : <br> <input type = "text" id ="review" name = "review" value = "Write a Review" ></input>';
+                                echo '</td>';
                         }
                         
-                        echo '</td>';
+                       
 
                         echo '</tr>';
 
@@ -436,7 +479,7 @@
 
                     echo '</table>';
 
-                    echo '<button type = "submit" name = "updateJob" value = "updateJob">Update</button>';
+                    echo '<button type = "submit" name = "updateJob" value = "'. $currentjobid .'">Update</button>';
                     echo '</form>';
                 }
                 else{
@@ -478,17 +521,23 @@
                         $accountresults = $conn->query($sqlaccount);
 
                         while($row3 = $accountresults->fetch_assoc()) {
-
+                            
+                            echo 'Client First Name: <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
+                            echo 'Client Last Name: <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
+                            echo 'Client Email: <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
+                            echo 'Client Phone Number: <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
+                            echo 'Job Start Date: <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
+                            echo 'Job Location: <br>';
                             echo $jobaddress;
                         }
                         
@@ -500,7 +549,7 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                            echo $jobcost;
+                        echo 'Total Cost: $' . $jobcost . '';
                         
                         echo '</td>';
 
@@ -518,7 +567,7 @@
 
                     echo '</table>';
 
-                    echo '<button type = "submit" name = "updateJob" value = "updateJob">Update</button>';
+                    echo '<button type = "submit" name = "updateJob" value = "'. $currentjobid .'">Update</button>';
                     echo '</form>';
                 }
 

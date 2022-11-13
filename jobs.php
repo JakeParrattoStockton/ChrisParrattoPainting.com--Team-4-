@@ -46,7 +46,7 @@
                 <div class = "container d-flex flex-wrap justify-content-center" style="font-family: Cambria; font-size: larger;">
                     <ul class="nav">
                         <li><a href="about.html"  class="nav-link px-2 link-secondary">ABOUT</a></li>
-                        <li><a href="reviews.html" class="nav-link px-2 link-dark">REVIEWS</a></li>
+                        <li><a href="reviews.php" class="nav-link px-2 link-dark">REVIEWS</a></li>
                         <li><a href="request.html" class="nav-link px-2 link-dark">REQUEST</a></li>
                         <li><a href="account.php" class="nav-link px-2 link-dark">ACCOUNT</a></li>
                     </ul>
@@ -123,11 +123,11 @@
                                         break;
                                 }
 
-                                echo '<td style="width: 300px;"><form action = "jobview.php" method = "post"><button type = "submit" name = "address" value = "'. $row['Address'] . '" class = "btn-link">' . $row['Address'] . '</button></form></td>';
+                                $currentjobid = $row['job_id'];
+
+                                echo '<td style="width: 300px;"><form action = "jobview.php" method = "post"><button type = "submit" name = "address" value = "'. $currentjobid . '" class = "btn-link">' . $row['Address'] . '</button></form></td>';
                                 echo '</tr>';
                                 echo '<tr>';
-
-                                $currentjobid = $row['job_id'];
 
                                 $sqlphoto = "SELECT photo_id, filename FROM photo AS photo1 WHERE photo1.job_id = $currentjobid ORDER BY photo_id ASC";
                                 
@@ -186,11 +186,11 @@
                                             break;
                                     }
 
-                                    echo '<td style="width: 300px;"><form action = "jobview.php" method = "post"><button type = "submit" name = "address" value = "'. $row['Address'] . '" class = "btn-link">' . $row['Address'] . '</button></form></td>';
+                                    $currentjobid = $row['job_id'];
+
+                                    echo '<td style="width: 300px;"><form action = "jobview.php" method = "post"><button type = "submit" name = "address" value = "'. $currentjobid . '" class = "btn-link">' . $row['Address'] . '</button></form></td>';
                                     echo '</tr>';
                                     echo '<tr>';
-
-                                    $currentjobid = $row['job_id'];
 
                                     $sqlphoto = "SELECT photo_id, filename FROM photo AS photo1 WHERE photo1.job_id = $currentjobid ORDER BY photo_id ASC";
                                     

@@ -19,6 +19,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+if(empty($ret['account_id'])) {
+    header('Location: login.html');
+}
+
 $id = $ret['account_id'];
 $date = date('Y-m-d', strtotime($_POST["start-date"]));
 $address = $_POST["address"];
