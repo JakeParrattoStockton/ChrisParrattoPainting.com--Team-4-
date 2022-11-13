@@ -33,7 +33,7 @@
             <!-- Header -->
             <header class=" border-bottom">
                 <div class="container-fluid">
-                  <a href="about.html">
+                  <a href="about.php">
                         <img src = "company logo.png" ></img>
                     </a>
                     <ul class="nav" style="float: right; padding-top: 210px;">
@@ -46,7 +46,7 @@
             <nav class="py-2 border-bottom" style="background-color:rgb(252, 223, 185) ;">
                 <div class = "container d-flex flex-wrap justify-content-center" style="font-family: Cambria; font-size: larger;">
                     <ul class="nav">
-                        <li><a href="about.html"  class="nav-link px-2 link-secondary">ABOUT</a></li>
+                        <li><a href="about.php"  class="nav-link px-2 link-secondary">ABOUT</a></li>
                         <li><a href="reviews.php" class="nav-link px-2 link-dark">REVIEWS</a></li>
                         <li><a href="request.html" class="nav-link px-2 link-dark">REQUEST</a></li>
                         <li><a href="account.php" class="nav-link px-2 link-dark">ACCOUNT</a></li>
