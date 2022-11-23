@@ -23,19 +23,44 @@
                 border: 1px solid black;
                 border-collapse: collapse;
                 }
+        .auto-style1 {
+			margin-bottom: 0px;
+		}
         </style>
     </head>
 
     <body>
+
+    <?php
+        
+        session_start();
+
+        $servername = "127.0.0.1";
+        $username = "root";
+        $password = "mysql";
+        $dbname = "chrisppaint";
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT  * FROM review ORDER BY Rating DESC";
+
+
+        $reviewresults = $conn->query($sql);
+
+    ?>
 
 
             <!-- Header -->
             <header class=" border-bottom">
                 <div class="container-fluid">
                   <a href="about.php">
-                        <img src = "company logo.png" ></img>
+                        <img src = "company logo.png" class="auto-style1" style="height: 80px" width="150" ></img>
                     </a>
-                    <ul class="nav" style="float: right; padding-top: 210px;">
+                    <ul class="nav" style="float: right; padding-top: 50px;">
                         <li class="nav-item"><a href="login.html" class="nav-link link-dark px-2">Login</a></li>
                         <li class="nav-item"><a href="signup.html" class="nav-link link-dark px-2">Sign up</a></li>
                     </ul>
@@ -60,17 +85,23 @@
              <div class="et_pb_text_inner" id="container" ><h1 style="text-align: center; padding-top: 50px;">About Chris Parratto</h1></div>
              <div class ="container-fluid" style="background-color:rgba(252, 223, 185, 0.849); border: 2px solid rgba(212, 188, 155, 0.781); font-family: Cambria;">
                 <center style="padding-top: 20px;">
-                    <b>“Chris Parratto Painting” is a long standing, 
+                    Welcome to Chris Parratto Painting! We have
+                    founded our company with the intention to deliver
+                    quality, affordable, and honest painting services
+                    in the area. We will go the extra mile to ensure
+                    that our customers are happy with our service.
+                    Chris Parratto Painting is a long standing, 
                     family owned, contracting painting
                     company. Customers have been getting 
                     satisfied for years and only have good things to say 
-                    about Chris Parratto. Here are some reviews below 
-                    to see what they have to say!</b>
+                    about Chris Parratto. <br><b>Here are some of our serives that we offer:</b>
+                    <br><br>
+                    Exterior Painting | Interior Painting | Wood Staining | Wallpaper Removal | Deck Refinishing | Garage Floor Coatings
                 </center>
                 <br>
                 <br>
-                <center style="padding-bottom: 5px;"><b>contact</b></center>
-                <center style = "font-size: 70%;">email : chrisparrattopainting@gmail.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;phone number: XXX-XXX-XXXX &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href = 'https://venmo.com/'>Submit a Payment via Venmo</a></center>
+                <center style="padding-bottom: 5px;"><b>Contact Us</b></center>
+                <center style = "font-size: 70%;"><b>Email :</b> chrisparrattopainting@gmail.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Phone Number:</b> XXX-XXX-XXXX &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href = 'https://venmo.com/'>Submit a Payment via Venmo</a></center>
             </div>
 
             <br>
@@ -78,28 +109,6 @@
             <div class="et_pb_text_inner"><h1 style="text-align: center;"><small>Satisfied Customers</small></h1></div>
             <br>
             <br>
-
-            <?php
-        
-                session_start();
-
-                $servername = "127.0.0.1";
-                $username = "root";
-                $password = "mysql";
-                $dbname = "chrisppaint";
-                // Create connection
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-
-                $sql = "SELECT  * FROM review ORDER BY Rating DESC";
-
-
-                $reviewresults = $conn->query($sql);
-
-            ?>
 
             <div align = "center" style = "font-size: 150%;">
             <?php
