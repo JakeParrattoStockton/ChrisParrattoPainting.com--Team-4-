@@ -34,9 +34,10 @@
             <header class=" border-bottom">
                 <div class="container-fluid">
                   <a href="about.php">
-                        <img src = "company logo.png" ></img>
+                        <img src = "company logo.png" class="auto-style1" style="height: 80px" width="150" ></img>
+
                     </a>
-                    <ul class="nav" style="float: right; padding-top: 210px;">
+                    <ul class="nav" style="float: right; padding-top: 50px;">
                         <li class="nav-item"><a href="login.html" class="nav-link link-dark px-2">Login</a></li>
                         <li class="nav-item"><a href="signup.html" class="nav-link link-dark px-2">Sign up</a></li>
                     </ul>
