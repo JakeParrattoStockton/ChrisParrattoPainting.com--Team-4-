@@ -2,7 +2,6 @@
 
 <!doctype html>
 <html>
-    
     <head>
         
         <!-- Required meta tags -->
@@ -23,6 +22,10 @@
                 border: 1px solid black;
                 border-collapse: collapse;
                 }
+                
+                body {
+background: url(https://img.freepik.com/premium-vector/watercolour-background-with-light-blue-stains_23-2148525000.jpg?w=2000); background-size: 100% 100%;
+}
         </style>
     
     </head>
