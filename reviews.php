@@ -37,7 +37,7 @@
                         <img src = "company logo.png" class="auto-style1" style="height: 80px" width="150" ></img>
 
                     </a>
-                    <ul class="nav" style="float: right; padding-top: 50px;">
+                    <ul class="nav" style="float: right; padding-top: 50px; font-family: Montserrat;">
                         <li class="nav-item"><a href="login.html" class="nav-link link-dark px-2">Login</a></li>
                         <li class="nav-item"><a href="signup.html" class="nav-link link-dark px-2">Sign up</a></li>
                     </ul>
@@ -45,7 +45,7 @@
             </header>
 
             <nav class="py-2 border-bottom" style="background-color:rgb(252, 223, 185) ;">
-                <div class = "container d-flex flex-wrap justify-content-center" style="font-family: Cambria; font-size: larger;">
+                <div class = "container d-flex flex-wrap justify-content-center" style="font-family: Montserrat; font-size: larger;">
                     <ul class="nav">
                         <li><a href="about.php"  class="nav-link px-2 link-secondary">ABOUT</a></li>
                         <li><a href="reviews.php" class="nav-link px-2 link-dark">REVIEWS</a></li>
@@ -78,7 +78,7 @@
 
             ?>
 
-            <div align = "center" style = "font-size: 150%;">
+            <div align = "center" style = "font-size: 150%; font-family: Montserrat;">
             <?php
 
             $i = 0;

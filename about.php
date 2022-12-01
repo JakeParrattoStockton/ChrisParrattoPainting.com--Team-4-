@@ -68,7 +68,7 @@
             </header>
 
             <nav class="py-2 border-bottom" style="background-color:rgb(252, 223, 185) ;">
-                <div class = "container d-flex flex-wrap justify-content-center" style="font-family: Cambria; font-size: larger;">
+                <div class = "container d-flex flex-wrap justify-content-center" style="font-family: Montserrat; font-size: larger;">
                     <ul class="nav">
                         <li><a href="about.php"  class="nav-link px-2 link-secondary">ABOUT</a></li>
                         <li><a href="reviews.php" class="nav-link px-2 link-dark">REVIEWS</a></li>
@@ -83,7 +83,7 @@
              
              <title>About Page</title>
              <div class="et_pb_text_inner" id="container" ><h1 style="text-align: center; padding-top: 50px;">About Chris Parratto</h1></div>
-             <div class ="container-fluid" style="background-color:rgba(252, 223, 185, 0.849); border: 2px solid rgba(212, 188, 155, 0.781); font-family: Cambria;">
+             <div class ="container-fluid" style="background-color:rgba(252, 223, 185, 0.849); border: 2px solid rgba(212, 188, 155, 0.781); font-family: Montserrat;">
                 <center style="padding-top: 20px;">
                     Welcome to Chris Parratto Painting! We have
                     founded our company with the intention to deliver
@@ -94,7 +94,7 @@
                     family owned, contracting painting
                     company. Customers have been getting 
                     satisfied for years and only have good things to say 
-                    about Chris Parratto. <br><b>Here are some of our serives that we offer:</b>
+                    about Chris Parratto. <br><br><b>Here are some of our serives that we offer:</b>
                     <br><br>
                     Exterior Painting | Interior Painting | Wood Staining | Wallpaper Removal | Deck Refinishing | Garage Floor Coatings
                 </center>
@@ -106,7 +106,7 @@
 
             <br>
             <br>
-            <div class="et_pb_text_inner"><h1 style="text-align: center;"><small>Satisfied Customers</small></h1></div>
+            <div class="et_pb_text_inner"><h1 style="text-align: center;"><small><u>Satisfied Customers</u></small></h1></div>
             <br>
             <br>
 
