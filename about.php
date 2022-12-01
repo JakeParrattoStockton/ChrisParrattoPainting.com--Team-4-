@@ -106,7 +106,7 @@
 
             <br>
             <br>
-            <div class="et_pb_text_inner"><h1 style="text-align: center;"><small>Satisfied Customers</small></h1></div>
+            <div class="et_pb_text_inner"><h1 style="text-align: center;"><small><u>Satisfied Customers</u></small></h1></div>
             <br>
             <br>
 
