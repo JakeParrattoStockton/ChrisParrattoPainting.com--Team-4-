@@ -86,7 +86,7 @@ background: url(https://media.istockphoto.com/id/892105268/photo/seamless-white-
              
              <title>About Page</title>
              <div class="et_pb_text_inner" id="container" ><h1 style="text-align: center; padding-top: 50px;">About Chris Parratto</h1></div>
-             <div class ="container-fluid" style="background-color:rgba(252, 223, 185, 0.849); border: 2px solid rgba(212, 188, 155, 0.781); font-family: Montserrat;">
+             <div class ="container-fluid" style="background-color:rgba(252, 223, 185, 0.849); border: 2px solid rgba(212, 188, 155, 0.781); font-family: Cambria;">
                 <center style="padding-top: 20px;">
                     Welcome to Chris Parratto Painting! We have
                     founded our company with the intention to deliver

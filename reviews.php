@@ -96,7 +96,7 @@ background: url(https://img.freepik.com/premium-vector/watercolour-background-wi
 
             </div>
 
-            <div align = "center" style = "font-size: 150%; font-family: Montserrat;">
+            <div align = "center" style = "font-size: 150%; font-family: Cambria;">
             <?php
 
             if(isset($_POST['submit'])) {
