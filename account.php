@@ -23,7 +23,8 @@
                 padding: 10px;
                 border: 1px solid black;
                 border-collapse: collapse;
-                }
+                } 
+   
         </style>
     </head>
 
@@ -89,9 +90,8 @@
 
             ?>
             <div>
-                <div style = "float: left; width: 50%; padding-left: 100px; font-size: 150%;">    
+                <div align = "center" style = "float: left; width: 50%; padding-left: 100px; font-size: 150%;">    
                     <h2>ACCOUNT INFO</h2>
-
                     <table>
                         <tr>
                             <td>First Name :
@@ -137,7 +137,7 @@
                         <br>
                     </form>
                 </div>
-                <div align ="right" style = "float: right; width: 50%; padding-right: 100px; font-size: 150%;">
+                <div align ="center" style = "float: right; width: 50%; padding-right: 100px; font-size: 150%;">
                     <h2>RECENT JOBS</h2>
                     <br>
 

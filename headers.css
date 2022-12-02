@@ -54,3 +54,7 @@ header img {
 table, th, td {
   border: 1px solid black;
 }
+
+body {
+  background: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-cloud-background_41066-1941.jpg); background-size: 100% 100%;
+}   

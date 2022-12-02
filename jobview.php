@@ -23,6 +23,9 @@
                 border: 1px solid black;
                 border-collapse: collapse;
                 }
+                body {
+  background: url(https://www.incubar.net/wp-content/uploads/Paint-Brush-201904-001.jpg); background-size: 100% 100%;
+}
         </style>
 
     </head>
