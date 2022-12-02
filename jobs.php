@@ -33,7 +33,7 @@
             <header class=" border-bottom">
                 <div class="container-fluid">
                   <a href="about.php">
-                        <img src = "company logo.png" ></img>
+                        <img src = "company logo.png" class="auto-style1" style="height: 20%; width: 20%;" ></img>
                     </a>
                     <ul class="nav" style="float: right; padding-top: 210px;">
                         <li class="nav-item"><a href="login.html" class="nav-link link-dark px-2">Login</a></li>
@@ -53,6 +53,7 @@
                 </div>
             </nav>
              <!-- Header -->
+             <br>
 
              <?php
         
@@ -81,7 +82,7 @@
             if($ret['admin'] == 0) {
                 $sql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id ORDER BY job_id DESC";
             }
-            else{
+            else {
                 $sql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job ORDER BY job_id DESC";
             }
 
@@ -89,8 +90,76 @@
 
             ?>
 
+            <div align = "center" class = "container">
+                <form method = "post">
+                    <input type="text" placeholder = "Search by Job Description or Address" name = "search" size = "100">
+                    <select name = "statFilter">
+                            <option value = "0">None</option>
+                            <option value = "1">Pending</option>
+                            <option value = "2">Started</option>
+                            <option value = "3">Awaiting Payment</option>
+                            <option value = "4">Completed</option>
+                        </select>
+                    <button class = "btn btn-dark" name = "submit">Search</button>
+                </form>
+
+            </div>
+
             <div align = "center" style = "font-size: 150%;">
             <?php
+
+            if(isset($_POST['submit'])) {
+
+                $search = $_POST['search'];
+                $filter = $_POST['statFilter'];
+
+                //check for admin
+                if($ret['admin'] == 0) {
+                    if($filter == 0)
+                    {
+                        if(empty($search)){
+                            $newsql = $sql;
+                        }
+                        else {
+                            $newsql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id AND (job1.Address LIKE '%$search%' OR job1.Description LIKE '%$search%') ORDER BY job_id DESC";
+                        }
+                        
+                    }
+                   else {
+                        if(empty($search)){
+                            $newsql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id AND job1.status = $filter ORDER BY job_id DESC";
+                        }
+                        else {
+                            $newsql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id AND job1.status = $filter AND (job1.Address LIKE '%$search%' OR job1.Description LIKE '%$search%') ORDER BY job_id DESC";
+                        }
+                        
+                   }
+                }
+                else {
+                    if($filter == 0)
+                    {
+                        if(empty($search)){
+                            $newsql = $sql;
+                        }
+                        else{
+                            $newsql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job WHERE Address LIKE '%$search%' OR Description LIKE '%$search%' ORDER BY job_id DESC";
+                        }
+                        
+                    }
+                   else {
+                        if(empty($search)) {
+                            $newsql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job WHERE status = $filter ORDER BY job_id DESC";
+                        }
+                        else {
+                            $newsql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job WHERE status = $filter AND (Address LIKE '%$search%' OR Description LIKE '%$search%') ORDER BY job_id DESC";
+                        }
+                        
+                   }
+                }
+
+                $jobresults = $conn->query($newsql);
+
+            }
 
             $i = 0;
             
