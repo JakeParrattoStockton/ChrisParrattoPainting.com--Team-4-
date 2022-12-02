@@ -24,7 +24,7 @@
                 border-collapse: collapse;
                 }
                 body {
-  background: url(https://www.incubar.net/wp-content/uploads/Paint-Brush-201904-001.jpg); background-size: 100% 100%;
+  background: url(https://media.istockphoto.com/id/892105268/photo/seamless-white-wall-background.jpg?b=1&s=170667a&w=0&k=20&c=liq3PVQj-a3_caqQc4wGEXebRvoi4ambDk9BTG751ac=); background-size: 100% 100%;
 }
         </style>
 
