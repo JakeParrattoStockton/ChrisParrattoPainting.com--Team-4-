@@ -56,5 +56,22 @@ table, th, td {
 }
 
 body {
-  background-color: #FAF9F6;
+  background: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-cloud-background_41066-1941.jpg); background-size: 100% 100%;
+}   
+
+/* Loader */
+.loader-container{
+  position: fixed;
+  top:0; left:0;
+  z-index: 10000;
+  background:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  width:100%;
+}
+
+.loader-container.fade-out{
+  top:-120%;
 }
