@@ -100,7 +100,25 @@
                     about Chris Parratto. <br><br><b>Here are some of our serives that we offer:</b>
                     <br><br>
                     Exterior Painting | Interior Painting | Wood Staining | Wallpaper Removal | Deck Refinishing | Garage Floor Coatings
+
+                    <style type="text/css">
+        #btn_s{
+            width: 200px;
+        }
+        #formbox {
+            width:400px;
+            margin:auto 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="signup.html">
+         <input type="submit" value="Request Quote">
+      </form>
                 </center>
+       
+                
                 <br>
                 <br>
                 <center style="padding-bottom: 5px;"><b>Contact Us</b></center>

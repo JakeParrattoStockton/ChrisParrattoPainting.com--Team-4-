@@ -215,7 +215,7 @@
                             ?>
                     
                     
-                    <a href="jobs.php"><button type = "button" name = "viewalljobs">View All</button><a>
+                  <a href="jobs.php"><button type = "button" name = "viewalljobs">View All</button></a>
                 </div>
             </div>    
 
