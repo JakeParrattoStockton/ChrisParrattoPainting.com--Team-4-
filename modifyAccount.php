@@ -29,6 +29,42 @@
         </style>
     </head>
 
+
+    <?php
+
+session_start();
+
+$servername = "127.0.0.1";
+$username = "root";
+$password = "mysql";
+$dbname = "chrisppaint";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$ret = $_SESSION['row'];
+
+if(empty($ret['account_id'])) {
+    header('Location: login.html');
+}
+
+$id = $ret['account_id'];
+
+//check for admin
+if($ret['admin'] == 0) {
+    $sql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job AS job1 WHERE job1.account_id = $id ORDER BY job_id DESC";
+}
+else{
+    $sql = "SELECT job_id, status, StartDate, Address, Cost, Description FROM job ORDER BY job_id DESC";
+}
+
+$jobresults = $conn->query($sql);
+
+?>
+
     <body>
 
 
@@ -56,36 +92,33 @@
                 </div>
             </nav>
 
+            
 <body>
 
 
 <div>
-                <div align = "center" style = "float: left; width: 50%; padding-left: 100px; font-size: 150%;">    
-                    <h2>ACCOUNT INFO</h2>
+                <div align = "left" style = "float: left; width: 50%; padding-left: 300px; font-size: 150%;"> <h2>ACCOUNT INFO</h2>
                     <table>
                         <tr>
                             <td>First Name :
-                            <?php echo $ret['first_name']; ?></td> <br>
+                            <?php echo $ret['first_name']; ?></td>
                         </tr>
-                        <br>
                         <tr>
                             <td>Last Name :
-                            <?php echo $ret['last_name']; ?></td> <br>
+                            <?php echo $ret['last_name']; ?></td>
                         </tr>
-                        <br>
                         <tr>
                             <td>Email :
-                            <?php echo $ret['email']; ?></td> <br>
+                            <?php echo $ret['email']; ?></td> 
                         </tr>
-                        <br>
                         <tr>
                             <td>Phone Number :
                             <?php echo $ret['phone_number']; ?></td>
                         </tr>
                     </table> 
-                    <br>
-                    <br>
 </div>
+<div align = "right" style = "float: right; width: 50%; padding-right: 300px; font-size: 150%;">
+
                     <h2>MODIFY ACCOUNT</h2>
                     <form action="modify.php" method="post">
                         <br>
@@ -107,6 +140,8 @@
                         <br>
                         <br>
                     </form>
+
+        </div>
                 </div>
 
         </body>

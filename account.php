@@ -93,10 +93,35 @@
             $jobresults = $conn->query($sql);
 
             ?>
+       
+        <div>
+                <div align = "center" style = "float: left; width: 50%; padding-left: 100px; font-size: 150%;">    
+                    <h2>ACCOUNT INFO</h2>
+                    <table>
+                        <tr>
+                            <td>First Name :
+                            <?php echo $ret['first_name']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name :
+                            <?php echo $ret['last_name']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Email :
+                            <?php echo $ret['email']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number :
+                            <?php echo $ret['phone_number']; ?></td>
+                        </tr>
+                    </table> 
+                    
+<br>
 
-        <div> <a href="modifyAccount.php"><button type = "button" name = "modifyAccount">Modify Account</button><a> </div>
+    <div> <a href="modifyAccount.php"> <button type = "button" name = "modifyAccount">Modify Account</button><a> </div>
 
-        
+</div>
+
                 <div align ="center" style = "float: right; width: 50%; padding-right: 100px; font-size: 150%;">
                     <h2>RECENT JOBS</h2>
                     <br>
