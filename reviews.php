@@ -249,6 +249,16 @@
                 $reviewresults->close();
              ?>
         </div>
+
+        <!-- loader  -->
+<div class="loader-container">
+    <img src="loader.gif" alt="">
+</div>
+
+
+<!-- custom js file link  -->
+<script src="js.js"></script>
+
     </body>
 
 </html>
