@@ -16,17 +16,20 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+$ret = $_SESSION['row'];
+
+$id = $ret['account_id'];
 $email = $_POST["email"];
 $password = $_POST["password"];
 $newEmail = $_POST["newEmail"];
 $newPhone = $_POST["newPhone"];
 $newPass = $_POST["newPass"];
 
-$sql = "UPDATE account SET email = '$newEmail', phone_number = '$newPhone', password = '$newPass' WHERE email = '$email' AND password = '$password'";
+$sql = "UPDATE account WHERE account_id = $id SET email = '$newEmail', phone_number = '$newPhone', password = '$newPass' WHERE email = '$email' AND password = '$password'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Modify complete!";
-    header("location: account.php");
+    header("location: logout.php");
 } 
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
