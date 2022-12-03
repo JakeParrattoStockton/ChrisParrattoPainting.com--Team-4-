@@ -93,54 +93,36 @@
             $jobresults = $conn->query($sql);
 
             ?>
-            <div>
+       
+        <div>
                 <div align = "center" style = "float: left; width: 50%; padding-left: 100px; font-size: 150%;">    
                     <h2>ACCOUNT INFO</h2>
                     <table>
                         <tr>
                             <td>First Name :
-                            <?php echo $ret['first_name']; ?></td> <br>
+                            <?php echo $ret['first_name']; ?></td>
                         </tr>
-                        <br>
                         <tr>
                             <td>Last Name :
-                            <?php echo $ret['last_name']; ?></td> <br>
+                            <?php echo $ret['last_name']; ?></td>
                         </tr>
-                        <br>
                         <tr>
                             <td>Email :
-                            <?php echo $ret['email']; ?></td> <br>
+                            <?php echo $ret['email']; ?></td>
                         </tr>
-                        <br>
                         <tr>
                             <td>Phone Number :
                             <?php echo $ret['phone_number']; ?></td>
                         </tr>
                     </table> 
-                    <br>
-                    <br>
-                    <h2>MODIFY ACCOUNT</h2>
-                    <form action="modify.php" method="post">
-                        <br>
-                            <tr>
-                                <td style="width: 243px; height: 23px" class="auto-style1">Current Email</td>
-                                <br />&nbsp;<input name="email" style="width: 300px; height: 50px" type="email" /><br />
-                                <td style="width: 243px; height: 23px" class="auto-style1">Current Password</td>
-                                <br />&nbsp;<input name="password" style="width: 300px; height: 50px" type="password" /><br />
-                                <td style="width: 243px; height: 23px" class="auto-style1">New Email</td>
-                                <br />&nbsp;<input name="newEmail" style="width: 300px; height: 50px" type="newEmail" /><br />
-                                <td style="width: 229px; height: 23px;">New Phone Number</td>
-                                <br />&nbsp;<input name="newPhone" style="width: 300px; height: 50px" type="newPhone" /><br />
-                                <td style="width: 229px; height: 23px;">New Password</td>
-                                <br />&nbsp;<input name="newPass" style="width: 300px; height: 50px" type="password" /><br />
-                                <br />
-                                <input name="Modify" type="submit" value="Modify" />
-                            </tr>
-                            <a href = 'logout.php'><button type ="button" name = "Logout">Logout</button></a>
-                        <br>
-                        <br>
-                    </form>
-                </div>
+
+<br>
+
+    <div> <a href="modifyAccount.php"> <button type = "button" name = "modifyAccount">Modify Account</button><a> 
+        <a href = 'logout.php'><button type ="button" name = "Logout">Logout</button></a>
+    </div>
+</div>
+
                 <div align ="center" style = "float: right; width: 50%; padding-right: 100px; font-size: 150%;">
                     <h2>RECENT JOBS</h2>
                     <br>
