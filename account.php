@@ -115,11 +115,12 @@
                             <?php echo $ret['phone_number']; ?></td>
                         </tr>
                     </table> 
-                    
+
 <br>
 
-    <div> <a href="modifyAccount.php"> <button type = "button" name = "modifyAccount">Modify Account</button><a> </div>
-
+    <div> <a href="modifyAccount.php"> <button type = "button" name = "modifyAccount">Modify Account</button><a> 
+        <a href = 'logout.php'><button type ="button" name = "Logout">Logout</button></a>
+    </div>
 </div>
 
                 <div align ="center" style = "float: right; width: 50%; padding-right: 100px; font-size: 150%;">

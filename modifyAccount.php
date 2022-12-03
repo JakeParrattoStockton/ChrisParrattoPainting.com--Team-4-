@@ -136,7 +136,6 @@ $jobresults = $conn->query($sql);
                                 <br />
                                 <input name="Modify" type="submit" value="Modify" />
                             </tr>
-                            <a href = 'logout.php'><button type ="button" name = "Logout">Logout</button></a>
                         <br>
                         <br>
                     </form>
