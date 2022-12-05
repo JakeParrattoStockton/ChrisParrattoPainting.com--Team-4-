@@ -22,10 +22,10 @@
             td {
                 padding: 15px;
                 border: 2;
-                border-color: rgba(113, 145, 235, 0.822);
+                border-color: rgba(212, 188, 155, 0.781);
                 border-style: dashed;
                 border-collapse: collapse;
-                background-color: azure;
+                background-color: white;
                 }
    
                 body {
@@ -98,23 +98,23 @@
             ?>
        
         <div>
-                <div align = "center" style = "float: left; width: 50%; padding-left: 100px; font-size: 150%;">    
-                    <h2>ACCOUNT INFO</h2>
+                <div align = "center" style = "float: left; width: 50%; padding-left: 100px; font-size: 160%;">    
+                    <h2 style = "padding-bottom: 10px">ACCOUNT INFO</h2>
                     <table>
                         <tr>
-                            <td>First Name :
+                            <td><b>First Name :</b>
                             <?php echo $ret['first_name']; ?></td>
                         </tr>
                         <tr>
-                            <td>Last Name :
+                            <td><b>Last Name :</b>
                             <?php echo $ret['last_name']; ?></td>
                         </tr>
                         <tr>
-                            <td>Email :
+                            <td><b>Email :</b>
                             <?php echo $ret['email']; ?></td>
                         </tr>
                         <tr>
-                            <td>Phone Number :
+                            <td><b>Phone Number :</b>
                             <?php echo $ret['phone_number']; ?></td>
                         </tr>
                     </table> 

@@ -15,15 +15,15 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <style>
-             table,
+            table,
             th,
             td {
                 padding: 15px;
                 border: 2;
-                border-color: rgba(113, 145, 235, 0.822);
+                border-color: rgba(212, 188, 155, 0.781);
                 border-style: dashed;
                 border-collapse: collapse;
-                background-color: azure;
+                background-color: white;
                 }
                 body {
                     background-color: #FAF9F6;
@@ -82,7 +82,7 @@
 
             ?>
 
-            <div align = "center" class = "container">
+            <div align = "center" class = "container" style = "padding-top: 15px; padding-bottom: 15px;">
                 <form method = "post">
                     <input type="text" placeholder = "Search by Review Text" name = "search" size = "100">
                     <select name = "ratingFilter">
@@ -167,7 +167,7 @@
 
                                 echo '</tr>';
                                 echo '<tr>';
-                                echo '<td style="width: 300px">' . $row['Review_text'] . '</td>';
+                                echo '<td style="width: 300px; font-style: italic;">"' . $row['Review_text'] . '"</td>';
                                 echo '</tr>';
                                 echo '<tr>';
 
@@ -221,7 +221,7 @@
 
                             echo '</tr>';
                             echo '<tr>';
-                            echo '<td style="width: 300px">' . $row['Review_text'] . '</td>';
+                            echo '<td style="width: 300px; font-style: italic;">"' . $row['Review_text'] . '"</td>';
                             echo '</tr>';
                             echo '<tr>';
 

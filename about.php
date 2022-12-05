@@ -20,10 +20,10 @@
             td {
                 padding: 15px;
                 border: 2;
-                border-color: rgba(113, 145, 235, 0.822);
+                border-color: rgba(212, 188, 155, 0.781);
                 border-style: dashed;
                 border-collapse: collapse;
-                background-color: azure;
+                background-color: white;
                 }
         .auto-style1 {
 			margin-bottom: 0px;
@@ -116,7 +116,7 @@
     </style>
 </head>
 <body>
-<form action="request.php">
+<form action="request.html">
          <input type="submit" value="Request Quote">
       </form>
                 </center>
@@ -174,7 +174,7 @@
 
                             echo '</tr>';
                             echo '<tr>';
-                            echo '<td style="width: 300px">' . $row['Review_text'] . '</td>';
+                            echo '<td style="width: 300px; font-style: italic;">"' . $row['Review_text'] . '"</td>';
                             echo '</tr>';
                             echo '<tr>';
 

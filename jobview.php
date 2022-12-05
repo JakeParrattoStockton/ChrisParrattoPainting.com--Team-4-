@@ -21,10 +21,10 @@
             td {
                 padding: 15px;
                 border: 2;
-                border-color: rgba(113, 145, 235, 0.822);
+                border-color: rgba(212, 188, 155, 0.781);
                 border-style: dashed;
                 border-collapse: collapse;
-                background-color: azure;
+                background-color: white;
                 }
                 body {
                     background-color: #FAF9F6;
@@ -171,22 +171,22 @@
 
                         while($row3 = $accountresults->fetch_assoc()) {
 
-                            echo 'Client First Name: <br>';
+                            echo '<b>Client First Name:</b> <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
-                            echo 'Client Last Name: <br>';
+                            echo '<b>Client Last Name:</b> <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
-                            echo 'Client Email: <br>';
+                            echo '<b>Client Email:</b> <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
-                            echo 'Client Phone Number: <br>';
+                            echo '<b>Client Phone Number:</b> <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
-                            echo 'Job Start Date: <br>';
+                            echo '<b>Job Start Date:</b> <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
-                            echo 'Job Location: <br>';
+                            echo '<b>Job Location:</b> <br>';
                             echo $jobaddress;
                         }
                         
@@ -198,7 +198,7 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                            echo 'Total Cost: $' . $jobcost . '';
+                            echo '<b>Total Cost:</b> $' . $jobcost . '';
                         
                         echo        '</td>';
                        
@@ -212,7 +212,7 @@
                         while($row4 = $reviewresults->fetch_assoc()){
                             
                             echo  '<td>';
-                            echo 'Rating : ' . $row4['Rating'] . ' Stars';
+                            echo '<b>Rating :</b> ' . $row4['Rating'] . ' Stars';
                             echo '</td>';
 
                             echo '</tr>';
@@ -220,20 +220,20 @@
                             echo '<tr>';
                             echo '<td>';
 
-                            echo 'Text Review : <br>' . $row4['Review_text'] . '';
+                            echo '<b>Text Review :</b> <br>' . $row4['Review_text'] . '';
                             echo '</td>';
                             $counter++;
                         }
 
                         if($counter == 0) {
                             echo  '<td>';
-                            echo 'Rating : Not Yet Rated';
+                            echo '<b>Rating :</b> Not Yet Rated';
                             echo '</td>';
 
                             echo '<tr>';
                             echo '<td>';
 
-                            echo 'Text Review : <br> Not Yet Reviewed';
+                            echo '<b>Text Review :</b> <br> Not Yet Reviewed';
                             echo '</td>';
                         }
                         
@@ -244,7 +244,7 @@
                         echo '<tr>';
                         echo '<td>';
                         
-                        echo 'Job Description : <br>' . $jobdescription . '';
+                        echo '<b>Job Description :</b> <br>' . $jobdescription . '';
 
                         echo    '</td>';
 
@@ -302,22 +302,22 @@
 
                         while($row3 = $accountresults->fetch_assoc()) {
 
-                            echo 'Client First Name: <br>';
+                            echo '<b>Client First Name:</b> <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
-                            echo 'Client Last Name: <br>';
+                            echo '<b>Client Last Name:</b> <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
-                            echo 'Client Email: <br>';
+                            echo '<b>Client Email:</b> <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
-                            echo 'Client Phone Number: <br>';
+                            echo '<b>Client Phone Number:</b> <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
-                            echo 'Job Start Date: <br>';
+                            echo '<b>Job Start Date:</b> <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
-                            echo 'Job Location: <br>';
+                            echo '<b>Job Location:</b> <br>';
                             echo $jobaddress;
                         }
                         
@@ -329,16 +329,54 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                        echo 'Total Cost: $' . $jobcost . '';
+                            echo '<b>Total Cost:</b> $' . $jobcost . '';
                         
                         echo        '</td>';
+                       
+                        
+                        $sqlreview =  "SELECT * FROM review AS review1 WHERE review1.job_id = $currentjobid";
+
+                        $reviewresults = $conn->query($sqlreview);
+
+                        $counter = 0;
+
+                        while($row4 = $reviewresults->fetch_assoc()){
+                            
+                            echo  '<td>';
+                            echo '<b>Rating :</b> ' . $row4['Rating'] . ' Stars';
+                            echo '</td>';
+
+                            echo '</tr>';
+
+                            echo '<tr>';
+                            echo '<td>';
+
+                            echo '<b>Text Review :</b> <br>' . $row4['Review_text'] . '';
+                            echo '</td>';
+                            $counter++;
+                        }
+
+                        if($counter == 0) {
+                            echo  '<td>';
+                            echo '<b>Rating :</b> Not Yet Rated';
+                            echo '</td>';
+
+                            echo '<tr>';
+                            echo '<td>';
+
+                            echo '<b>Text Review :</b> <br> Not Yet Reviewed';
+                            echo '</td>';
+                        }
+                        
+                        
 
                         echo '</tr>';
 
                         echo '<tr>';
                         echo '<td>';
                         
-                        echo 'Job Description : <br>' . $jobdescription . '';
+                        echo '<b>Job Description :</b> <br>' . $jobdescription . '';
+
 
                         echo    '</td>';
 
@@ -394,22 +432,22 @@
 
                         while($row3 = $accountresults->fetch_assoc()) {
 
-                            echo 'Client First Name: <br>';
+                            echo '<b>Client First Name:</b> <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
-                            echo 'Client Last Name: <br>';
+                            echo '<b>Client Last Name:</b> <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
-                            echo 'Client Email: <br>';
+                            echo '<b>Client Email:</b> <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
-                            echo 'Client Phone Number: <br>';
+                            echo '<b>Client Phone Number:</b> <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
-                            echo 'Job Start Date: <br>';
+                            echo '<b>Job Start Date:</b> <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
-                            echo 'Job Location: <br>';
+                            echo '<b>Job Location:</b> <br>';
                             echo $jobaddress;
                         }
                         
@@ -421,7 +459,7 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                        echo 'Total Cost: $' . $jobcost . '';
+                        echo '<b>Total Cost:</b> $' . $jobcost . '';
                         
                         echo        '</td>';
                         
@@ -434,7 +472,7 @@
 
                         while($row4 = $reviewresults->fetch_assoc()){
                             echo    '<td>';
-                            echo 'Rating : ' . $row4['Rating'] . ' Stars';
+                            echo '<b>Rating :</b> ' . $row4['Rating'] . ' Stars';
                             echo '</td>';
 
                             echo '</tr>';
@@ -442,7 +480,7 @@
                             echo '<tr>';
                             echo '<td>';
 
-                            echo 'Text Review : <br> <input type = "text" id ="review" name = "review" value = "' . $row4['Review_text'] . '" ></input>';
+                            echo '<b>Text Review :</b> <br> <input type = "text" id ="review" name = "review" value = "' . $row4['Review_text'] . '" ></input>';
                             echo '</td>';
                             $counter2++;
                             
@@ -465,7 +503,7 @@
                                 echo '<tr>';
                                 echo '<td>';
 
-                                echo 'Text Review : <br> <input type = "text" id ="review" name = "review" value = "Write a Review" ></input>';
+                                echo '<b>Text Review :</b> <br> <input type = "text" id ="review" name = "review" value = "Write a Review" ></input>';
                                 echo '</td>';
                         }
                         
@@ -476,7 +514,7 @@
                         echo '<tr>';
                         echo '<td>';
                         
-                        echo 'Job Description : <br> <input type = "text" id ="description" name = "description" value = " '. $jobdescription .' "></input>';
+                        echo '<b>Job Description :</b> <br> <input type = "text" id ="description" name = "description" value = " '. $jobdescription .' "></input>';
 
                         echo    '</td>';
 
@@ -528,22 +566,22 @@
 
                         while($row3 = $accountresults->fetch_assoc()) {
                             
-                            echo 'Client First Name: <br>';
+                            echo '<b>Client First Name:</b> <br>';
                             echo $row3['first_name'];
                             echo '<br> <br>';
-                            echo 'Client Last Name: <br>';
+                            echo '<b>Client Last Name:</b> <br>';
                             echo $row3['last_name'];
                             echo '<br> <br>';
-                            echo 'Client Email: <br>';
+                            echo '<b>Client Email:</b> <br>';
                             echo $row3['email'];
                             echo '<br> <br>';
-                            echo 'Client Phone Number: <br>';
+                            echo '<b>Client Phone Number:</b> <br>';
                             echo $row3['phone_number'];
                             echo '<br> <br>';
-                            echo 'Job Start Date: <br>';
+                            echo '<b>Job Start Date:</b> <br>';
                             echo $jobstartdate;
                             echo '<br> <br>';
-                            echo 'Job Location: <br>';
+                            echo '<b>Job Location:</b> <br>';
                             echo $jobaddress;
                         }
                         
@@ -555,7 +593,7 @@
                         echo '<tr>';
                         echo    '<td>';
 
-                        echo 'Total Cost: $' . $jobcost . '';
+                        echo '<b>Total Cost:</b> $' . $jobcost . '';
                         
                         echo '</td>';
 
@@ -564,7 +602,7 @@
                         echo '<tr>';
                         echo '<td>';
                         
-                        echo 'Job Description : <br> <input type = "text" id ="description" name = "description" value = " '. $jobdescription .' "></input>';
+                        echo '<b>Job Description :</b> <br> <input type = "text" id ="description" name = "description" value = " '. $jobdescription .' "></input>';
 
                         echo    '</td>';
 

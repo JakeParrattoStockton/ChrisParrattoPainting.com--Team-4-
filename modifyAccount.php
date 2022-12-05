@@ -19,10 +19,10 @@
             td {
                 padding: 15px;
                 border: 2;
-                border-color: rgba(113, 145, 235, 0.822);
+                border-color: rgba(212, 188, 155, 0.781);
                 border-style: dashed;
                 border-collapse: collapse;
-                background-color: azure;
+                background-color: white;
                 }
    
                 body {
@@ -95,46 +95,23 @@ $jobresults = $conn->query($sql);
                 </div>
             </nav>
 
-            
-<body>
+            <Center><h2 style = "padding-bottom: 15px">MODIFY ACCOUNT</h2></Center>
 
+<div align = "center" class = "container d-flex flex-wrap justify-content-center" style = "font-size: 160%;">
 
-<div>
-                <div align = "left" style = "float: left; width: 50%; padding-left: 300px; font-size: 150%;"> <h2>ACCOUNT INFO</h2>
-                    <table>
-                        <tr>
-                            <td>First Name :
-                            <?php echo $ret['first_name']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Last Name :
-                            <?php echo $ret['last_name']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Email :
-                            <?php echo $ret['email']; ?></td> 
-                        </tr>
-                        <tr>
-                            <td>Phone Number :
-                            <?php echo $ret['phone_number']; ?></td>
-                        </tr>
-                    </table> 
-</div>
-<div align = "right" style = "float: right; width: 50%; padding-right: 300px; font-size: 150%;">
-
-                    <h2>MODIFY ACCOUNT</h2>
+                    
                     <form action="modify.php" method="post">
                         <br>
                             <tr>
-                                <td style="width: 243px; height: 23px" class="auto-style1">Current Email</td>
+                                <td style="width: 300px; height: 40px" class="auto-style1">Current Email</td>
                                 <br />&nbsp;<input name="email" style="width: 300px; height: 50px" type="email" /><br />
-                                <td style="width: 243px; height: 23px" class="auto-style1">Current Password</td>
+                                <td style="width: 300px; height: 40px" class="auto-style1">Current Password</td>
                                 <br />&nbsp;<input name="password" style="width: 300px; height: 50px" type="password" /><br />
-                                <td style="width: 243px; height: 23px" class="auto-style1">New Email</td>
+                                <td style="width: 300px; height: 40px" class="auto-style1">New Email</td>
                                 <br />&nbsp;<input name="newEmail" style="width: 300px; height: 50px" type="newEmail" /><br />
-                                <td style="width: 229px; height: 23px;">New Phone Number</td>
+                                <td style="width: 300px; height: 40px;">New Phone Number</td>
                                 <br />&nbsp;<input name="newPhone" style="width: 300px; height: 50px" type="newPhone" /><br />
-                                <td style="width: 229px; height: 23px;">New Password</td>
+                                <td style="width: 300px; height: 40px;">New Password</td>
                                 <br />&nbsp;<input name="newPass" style="width: 300px; height: 50px" type="password" /><br />
                                 <br />
                                 <input name="Modify" type="submit" value="Modify" />
@@ -144,7 +121,6 @@ $jobresults = $conn->query($sql);
                     </form>
 
         </div>
-                </div>
 
         </body>
 </html>
