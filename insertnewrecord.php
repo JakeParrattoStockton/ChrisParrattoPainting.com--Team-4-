@@ -31,7 +31,7 @@ else {
 
 if ($conn->query($sql) === TRUE) {
     echo "Sign up successfully!";
-    header("location: login.html");
+    header("location: account.php");
 } 
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -15,12 +15,15 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <style>
-            table,
+          table,
             th,
             td {
-                padding: 10px;
-                border: 1px solid black;
+                padding: 15px;
+                border: 2;
+                border-color: rgba(113, 145, 235, 0.822);
+                border-style: dashed;
                 border-collapse: collapse;
+                background-color: azure;
                 }
         .auto-style1 {
 			margin-bottom: 0px;
@@ -113,7 +116,7 @@
     </style>
 </head>
 <body>
-<form action="signup.html">
+<form action="request.php">
          <input type="submit" value="Request Quote">
       </form>
                 </center>
@@ -136,14 +139,14 @@
 
             $i = 0;
             
-            echo '<table border = "0">';
+            echo '<table>';
             echo '<tr>';
 
             while($row = $reviewresults->fetch_assoc() and $i < 3) {
                 
                 
                     echo '<td>';
-                        echo '<table border = "1" style = "text-align: center;">';
+                        echo '<table style = "text-align: center;">';
 
                             echo '<tr>';
 

@@ -17,10 +17,13 @@
             table,
             th,
             td {
-                padding: 10px;
-                border: 3px solid black;
+                padding: 15px;
+                border: 2;
+                border-color: rgba(113, 145, 235, 0.822);
+                border-style: dashed;
                 border-collapse: collapse;
-                } 
+                background-color: azure;
+                }
    
                 body {
                     background-color: #FAF9F6;

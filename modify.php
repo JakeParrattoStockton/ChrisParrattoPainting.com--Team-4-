@@ -25,7 +25,7 @@ $newEmail = $_POST["newEmail"];
 $newPhone = $_POST["newPhone"];
 $newPass = $_POST["newPass"];
 
-$sql = "UPDATE account WHERE account_id = $id SET email = '$newEmail', phone_number = '$newPhone', password = '$newPass' WHERE email = '$email' AND password = '$password'";
+$sql = "UPDATE account SET email = '$newEmail', phone_number = '$newPhone', password = '$newPass' WHERE account_id = $id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Modify complete!";

@@ -15,14 +15,16 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
         <style>
-            table,
+             table,
             th,
             td {
-                padding: 10px;
-                border: 1px solid black;
+                padding: 15px;
+                border: 2;
+                border-color: rgba(113, 145, 235, 0.822);
+                border-style: dashed;
                 border-collapse: collapse;
+                background-color: azure;
                 }
-                
                 body {
                     background-color: #FAF9F6;
             }
